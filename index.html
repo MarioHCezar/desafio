@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <title>Desafio</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="img/undraw_hiring_re_yk5n.svg" alt="imagem de formulários" />
+      </div>
+      <div class="info-container">
+        <div class="form">
+          <form id="add-form">
+            <div class="header">
+              <h2>Insira seus dados</h2>
+              <div class="input-data">
+                <div class="input-box">
+                  <label for="name"></label>
+                  <input
+                    type="text"
+                    id="name1"
+                    name="name"
+                    placeholder="Insira seu nome"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="cpf"></label>
+                  <input type="text" id="cpf" name="cpf" placeholder="CPF" />
+                </div>
+                <div class="input-box">
+                  <label for="birthday"></label>
+                  <input type="date" id="birthday" name="nascimento" />
+                </div>
+                <div class="input-box">
+                  <label for="income"></label>
+                  <input
+                    type="text"
+                    id="income"
+                    name="income"
+                    placeholder="R$"
+                  />
+                </div>
+              </div>
+              <div class="submit">
+                <input class="form-button" type="submit" value="Enviar" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="table">
+          <h2>Tabela</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Idade</th>
+                <th>Renda</th>
+              </tr>
+            </thead>
+            <tbody class="new-row">
+              <tr class="cliente">
+                <td class="name">Mario Henrique Cezar</td>
+                <td class="cpf">111.111.111-11</td>
+                <td class="birthday">39</td>
+                <td class="income">R$ 3000,00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <th colspan="3">Somatório</th>
+
+              <td class="total">R$</td>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
