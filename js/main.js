@@ -40,9 +40,11 @@ submitButton.addEventListener('click', (e) => {
     ageTd.innerHTML = parseInt(currentYear) - parseInt(myYear);
     incomeTd.textContent = `R$ ${parseFloat(income).toFixed(2)}`;
 
+    let total = parseFloat(income);
     for (let i = 0; i < tdIncome.length; i++) {
-        tdTotal.innerHTML += parseFloat(tdIncome[i].innerHTML);
+        total += parseFloat(tdIncome[i].innerHTML.replace("R$ ", ""));
     }
+    tdTotal.innerHTML = `R$ ${parseFloat(total).toFixed(2)}`;
 
     clientTr.classList.add('client');
     nameTd.classList.add('name');
