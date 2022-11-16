@@ -205,3 +205,8 @@ th {
   color: red;
   font-weight: 800;
 }
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
