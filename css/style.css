@@ -221,7 +221,7 @@ th {
   }
 
   table td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(179, 168, 168);
     display: block;
     text-align: right;
   }
