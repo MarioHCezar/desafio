@@ -47,6 +47,7 @@ body {
   background-color: #5f5f5f;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  overflow-y: hidden;
 }
 
 .table {
@@ -62,12 +63,12 @@ body {
   overflow-y: scroll;
 }
 
-th{
+th {
   min-width: 120px;
   text-align: justify;
 }
 
-td{
+td {
   min-width: 120px;
   text-align: center;
 }
@@ -81,13 +82,6 @@ td{
 
 h2 {
   margin-bottom: 0.5rem;
-}
-
-.input-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 1rem;
 }
 
 .input-data input {
@@ -108,62 +102,6 @@ h2 {
 
 .submit input:hover {
   background-color: #5f5fc5;
-}
-
-@media screen and (max-width: 1330px) {
-  .image {
-    display: none;
-  }
-  .container {
-    width: 50%;
-  }
-  .info-container {
-    width: 50%;
-  }
-  .form {
-    width: 100%;
-  }
-  .table {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1064px) {
-  .container {
-    width: 90%;
-    height: auto;
-  }
-  .info-container {
-    width: 90%;
-    height: auto;
-  }
-  .input-data {
-    flex-direction: column;
-    overflow-y: scroll;
-    flex-wrap: nowrap;
-    max-height: 10rem;
-    padding-right: 5rem;
-  }
-  .input-data::-webkit-scrollbar {
-    width: 0.5rem; /* width of the entire scrollbar */
-  }
-
-  .input-data::-webkit-scrollbar-track {
-    background: rgb(26, 25, 24);
-    border-radius: 1rem; /* color of the tracking area */
-  }
-
-  .input-data::-webkit-scrollbar-thumb {
-    background-color: #5f5fff; /* color of the scroll thumb */
-    border-radius: 1rem; /* roundness of the scroll thumb */
-  }
-
-  .form {
-    width: 100%;
-  }
-  .table {
-    width: 100%;
-  }
 }
 
 table {
@@ -201,12 +139,90 @@ th {
   justify-content: space-evenly;
 }
 
-.slave{
+.slave {
   color: red;
   font-weight: 800;
 }
 
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1330px) {
+  .image {
+    display: none;
+  }
+  .container {
+    width: 50%;
+  }
+  .info-container {
+    width: 50%;
+  }
+  .form {
+    width: 100%;
+  }
+  .table {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+  .info-container {
+    width: 90%;
+    height: auto;
+  }
+  .input-data {
+    flex-direction: column;
+    /* overflow-y: scroll; */
+    flex-wrap: nowrap;
+    max-height: 10rem;
+    padding-right: 5rem;
+  }
+  .input-data::-webkit-scrollbar {
+    width: 0.5rem; /* width of the entire scrollbar */
+  }
+
+  .input-data::-webkit-scrollbar-track {
+    background: rgb(26, 25, 24);
+    border-radius: 1rem; /* color of the tracking area */
+  }
+
+  .input-data::-webkit-scrollbar-thumb {
+    background-color: #5f5fff; /* color of the scroll thumb */
+    border-radius: 1rem; /* roundness of the scroll thumb */
+  }
+
+  .form {
+    width: 100%;
+  }
+  .table {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  table th {
+    border: none;
+    clip: rect(0 0 0 0);
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
 }
