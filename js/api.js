@@ -9,6 +9,7 @@ const getButton = document.querySelector(".get-button");
 let xhr = new XMLHttpRequest();
 let clientArray = [];
 
+//Insere dados no Banco
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("Some API is going on");
@@ -25,6 +26,7 @@ submitButton.addEventListener("click", (e) => {
   xhr.send(json);
 });
 
+//Busca dados no Banco
 function getData() {
   xhr.open("GET", urlGet);
   xhr.send();
@@ -34,7 +36,6 @@ function getData() {
     cpfTd = document.createElement("td");
     clients.forEach((client) => {
       addClient(client);
-      // console.log(`${client['id']} ${client['nome']}`);
       clientArray.push(client.id);
       clientArray.forEach((client) => {
         cpfTd.classList.add(`"${client.id}"`);
@@ -43,5 +44,4 @@ function getData() {
   });
 }
 
-console.log(clientArray);
 getButton.addEventListener("click", getData());
