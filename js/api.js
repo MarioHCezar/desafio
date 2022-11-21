@@ -7,6 +7,7 @@ const urlPatch = "http://www.ksamochvalov.com/academia/AtualizarCliente.php";
 const getButton = document.querySelector(".get-button");
 
 let xhr = new XMLHttpRequest();
+let clientArray = [];
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -26,14 +27,21 @@ submitButton.addEventListener("click", (e) => {
 
 function getData() {
   xhr.open("GET", urlGet);
+  xhr.send();
   xhr.addEventListener("load", () => {
     let response = xhr.responseText;
     let clients = JSON.parse(response);
+    cpfTd = document.createElement("td");
     clients.forEach((client) => {
       addClient(client);
+      // console.log(`${client['id']} ${client['nome']}`);
+      clientArray.push(client.id);
+      clientArray.forEach((client) => {
+        cpfTd.classList.add(`"${client.id}"`);
+      });
     });
   });
-  xhr.send();
 }
 
+console.log(clientArray);
 getButton.addEventListener("click", getData());

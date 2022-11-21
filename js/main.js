@@ -1,5 +1,6 @@
 const tdName = document.querySelector(".name");
 const tdCPF = document.querySelector(".cpf");
+const tdId = document.querySelector(".id");
 const tdBirthday = document.querySelector(".birthday");
 const submitButton = document.querySelector(".form-button");
 const form = document.querySelector("#add-form");
@@ -24,9 +25,11 @@ function addClient(client) {
   const cpfTd = document.createElement("td");
   const ageTd = document.createElement("td");
   const incomeTd = document.createElement("td");
+  const id = document.createElement("td");
 
   nameTd.textContent = client.nome;
   cpfTd.textContent = client.cpf;
+  id.textContent = client.id;
   ageTd.innerHTML = parseInt(currentYear) - parseInt(myYear);
   incomeTd.textContent = `R$ ${parseFloat(client.renda).toFixed(2)}`;
 
@@ -41,15 +44,45 @@ function addClient(client) {
   cpfTd.classList.add("cpf");
   ageTd.classList.add("age");
   incomeTd.classList.add("income");
+  id.classList.add("id");
 
   clientTr.appendChild(nameTd);
   clientTr.appendChild(cpfTd);
   clientTr.appendChild(ageTd);
   clientTr.appendChild(incomeTd);
+  clientTr.appendChild(id);
 
   if (client.renda < minimalIncome) {
     clientTr.classList.add("slave");
   }
 
+  console.log(client.id);
+  console.log(id.innerHTML);
+
   newRow.appendChild(clientTr);
+
+  let removableClient = document.querySelectorAll(".client");
+
+  function removeClient() {
+    removableClient.forEach((client) => {
+      client.addEventListener("dblclick", (evt) => {
+        client.remove();
+
+        console.log("Removing register");
+
+        xhr.open("DELETE", urlDelete);
+
+        // console.log(evt.target);
+        // console.log(evt.target.parentElement.children[4].innerHTML);
+
+        let remove = JSON.stringify({
+          cd_clientes: evt.target.parentElement.children[4].innerHTML,
+        });
+
+        xhr.send(remove);
+      });
+    });
+  }
+  removeClient();
 }
+

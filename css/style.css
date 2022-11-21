@@ -150,24 +150,6 @@ th {
 }
 
 @media screen and (max-width: 1330px) {
-  .image {
-    display: none;
-  }
-  .container {
-    width: 50%;
-  }
-  .info-container {
-    width: 50%;
-  }
-  .form {
-    width: 100%;
-  }
-  .table {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1064px) {
   .container {
     width: 90%;
     height: auto;
@@ -202,6 +184,17 @@ th {
   }
   .table {
     width: 100%;
+    margin-top: 2rem;
+  }
+  .image {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+  }
+  .table {
+    width: 100%;
   }
 }
 
@@ -225,4 +218,8 @@ th {
     display: block;
     text-align: right;
   }
+}
+
+.id{
+  display: none;
 }
